@@ -1,0 +1,5 @@
+node_modules
+.idea
+items-interactions.json.db.json
+identities.json.db.json
+items.json.db.json

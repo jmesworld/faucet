@@ -1,0 +1,23 @@
+{
+  "name": "faucet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmesworld/faucet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmesworld/faucet/issues"
+  },
+  "homepage": "https://github.com/jmesworld/faucet#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jmes": "^1.1.0"
+  }
+}
