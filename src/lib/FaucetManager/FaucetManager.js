@@ -1,5 +1,11 @@
 const jmes = require('jmes');
-
+const wait = async (ts)=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(true)
+        }, ts)
+    })
+}
 class FaucetManager {
     constructor(props = {}) {
         this.account = null;
@@ -12,10 +18,14 @@ class FaucetManager {
         this.account = account;
 
         this.lcdcURL = props?.lcdc?.URL ?? 'http://51.38.52.37:1317';
-        this.lcdc = client.createLCDClient({
-            URL: this.lcdcURL
-        });
-
+        try {
+            this.lcdc = client.createLCDClient({
+                URL: this.lcdcURL
+            });
+        } catch (e){
+            console.error('Failed to perform creating the LCDCClient');
+            console.error(e);
+        }
 
         console.log("Faucet address:",account.getAddress());
         if(this.mnemonic === null){
@@ -24,6 +34,7 @@ class FaucetManager {
     }
 
     async init(props = {}){
+        await wait(10000);
         const balance = await this.getBalance()
         console.log(`Initializing... Current balance: ${balance}`)
 

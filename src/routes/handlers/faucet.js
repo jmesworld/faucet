@@ -38,19 +38,21 @@ function faucetHandler ({ faucetManager,identityManager } = {}) {
         const {
             query: {
                 address,
-                denom
+                denom,
+                amount
             },
             path
         } = req
         try {
             const denomination = denom ?? 'ujmes'
+            const sendAmount = amount ?? 1e6;
             if (!address) throw new MissingQueryParameterError(path, 'address')
 
             try {
 
                 const sendParams = {
                         address: address,
-                        amount: 1*1e6
+                        amount: sendAmount
                  }
                 const sendTransactionRequest = await faucetManager.sendTransaction(sendParams);
                 console.log({sendTransactionRequest})

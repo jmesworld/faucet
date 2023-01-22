@@ -11,9 +11,13 @@ async function init () {
 
     if (this.instance !== null) throw new Error('Instance is already initialized.');
     try {
+        const hostname = process.env.HOSTNAME ?? 'localhost';
+        const hostport = process.env.HOSTPORT ?? '1317';
+
+        const url = `http://${hostname}:${hostport}`;
         this.faucetManager = new FaucetManager({
             lcdc: {
-                URL: 'http://localhost:1317'
+                URL: url
             },
             mnemonic: "steel test mixed child detect symbol obtain rack rail lemon east prosper trap surround lunar green vessel vacuum month lunar brain parade strike fish"
         });
