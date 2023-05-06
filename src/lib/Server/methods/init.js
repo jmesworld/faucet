@@ -11,7 +11,7 @@ async function init () {
 
     if (this.instance !== null) throw new Error('Instance is already initialized.');
     try {
-        const hostname = process.env.HOSTNAME ?? 'localhost';
+        const hostname = process.env.HOSTNAME ?? '164.92.191.45';
         const hostport = process.env.HOSTPORT ?? '1317';
 
         const url = `http://${hostname}:${hostport}`;
@@ -19,7 +19,7 @@ async function init () {
             lcdc: {
                 URL: url
             },
-            mnemonic: "steel test mixed child detect symbol obtain rack rail lemon east prosper trap surround lunar green vessel vacuum month lunar brain parade strike fish"
+            mnemonic: process.env.FAUCET_MNEMONIC
         });
         await this.faucetManager.init({
             password: '',

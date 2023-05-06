@@ -9,6 +9,6 @@ RUN npm install --production
 
 COPY . .
 
-EXPOSE 3002
+EXPOSE 8080
 
 CMD [ "node", "scripts/start-faucet.js" ]
