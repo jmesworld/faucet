@@ -17,7 +17,7 @@ class FaucetManager {
         const account = wallet.getAccount();
         this.account = account;
 
-        this.lcdcURL = props?.lcdc?.URL ?? 'http://51.38.52.37:1317';
+        this.lcdcURL = props?.lcdc?.URL ?? 'http://164.92.191.45:1317';
         try {
             this.lcdc = client.createLCDClient({
                 URL: this.lcdcURL
