@@ -98,7 +98,7 @@ class FaucetManager {
         const tx = await this.account.sendTransaction({
             recipientAddress: address,
             recipientAmount: amount
-        },this.lcdcURL)
+        },this.lcdcURL, 'jmes-testnet-1')
 
         return { transactionHash: tx.txhash}
     }
