@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/jmesworld/faucet#readme",
   "dependencies": {
+    "@terra-money/terra.proto": "^3.0.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "jmes": "^1.2.3"
+    "jmes": "github:mayoreee/jmes.js"
   }
 }

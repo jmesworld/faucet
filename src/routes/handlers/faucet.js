@@ -45,7 +45,7 @@ function faucetHandler ({ faucetManager,identityManager } = {}) {
         } = req
         try {
             const denomination = denom ?? 'ujmes'
-            const sendAmount = amount ?? 1e6;
+            const sendAmount = amount ?? 10e6;
             if (!address) throw new MissingQueryParameterError(path, 'address')
 
             try {

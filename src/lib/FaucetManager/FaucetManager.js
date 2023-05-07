@@ -99,7 +99,6 @@ class FaucetManager {
             recipientAddress: address,
             recipientAmount: amount
         },this.lcdcURL, 'jmes-testnet-1')
-
         return { transactionHash: tx.txhash}
     }
 };
