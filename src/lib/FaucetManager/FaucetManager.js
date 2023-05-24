@@ -1,4 +1,6 @@
 const jmes = require('jmes');
+require('dotenv').config()
+
 const wait = async (ts)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
@@ -98,7 +100,7 @@ class FaucetManager {
         const tx = await this.account.sendTransaction({
             recipientAddress: address,
             recipientAmount: amount
-        },this.lcdcURL, 'jmes-testnet-1')
+        },this.lcdcURL, process.env.CHAIN_ID)
         return { transactionHash: tx.txhash}
     }
 };
