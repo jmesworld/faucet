@@ -16,6 +16,7 @@ async function init () {
         const hostport = process.env.HOSTPORT ?? '1317';
 
         const url = `http://${hostname}:${hostport}`;
+        console.log("request url: ", url)
         this.faucetManager = new FaucetManager({
             lcdc: {
                 URL: url
