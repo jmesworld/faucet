@@ -5,8 +5,6 @@ const FaucetManager = require('../../FaucetManager/FaucetManager');
 const routes = require('../../../routes');
 require('dotenv').config()
 
-const FAUCET_PRIVATE_KEY = '3043fe3011a50ea3e6015a2e650f83d13eb90bf65f2e5213a10c81f3c53e1a9e'
-const VALIDATOR_PRIVATE_KEY = '21880b2e60c0440155bc3ecb7952610b00f15b53517379b7b0e546cf9d43d49b';
 async function init () {
     console.info('Initializing Server');
 
