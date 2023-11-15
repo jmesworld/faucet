@@ -1,11 +1,20 @@
 const { Router } = require('express')
 const cors = require("cors");
 const router = Router()
+require('dotenv').config();
 
+const allowedOrigins = [process.env.ALLOWED_ORIGINS];
 
 const register = function ({ server, managers }) {
     server.use(cors({
-        origin: '*'
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 200
     }));
 
 
